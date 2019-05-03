@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Work Tracker</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div>
+  <mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile colspan=1 rowspan=1>
+      <mat-form-field>
+        <input matInput [(ngModel)]="date" [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field>
+          <input matInput [(ngModel)]="start" type='time' placeholder="Start">
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field>
+          <input [(ngModel)]="pause" matInput type='time' placeholder="Pause">
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field>
+          <input matInput [(ngModel)]="ende" type='time' placeholder="Ende">
+        </mat-form-field>
+     </mat-grid-tile>
+     <mat-grid-tile colspan=1 rowspan=1>
+      <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+     </mat-grid-tile>
+  </mat-grid-list>
+</div>
